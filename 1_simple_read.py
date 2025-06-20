@@ -9,6 +9,6 @@ from pylogix import PLC
 
 comm = PLC()
 comm.IPAddress = '192.168.1.210'
-ret = comm.Read('CurrentScreen')
+ret = comm.Read('Count_Bin_Good_Parts_Bi')
 print(ret.TagName, ret.Value, ret.Status)
 comm.Close()

@@ -12,5 +12,6 @@ with PLC() as comm:
     comm.IPAddress = '192.168.1.210'
     tags = comm.GetTagList()
     
-    for t in tags.Value:
-        print(t.TagName, t.DataType)
+    with open("tags.txt", "w") as f:
+        for t in tags.Value:
+            f.write(f"{t.TagName}, {t.DataType}\n")
